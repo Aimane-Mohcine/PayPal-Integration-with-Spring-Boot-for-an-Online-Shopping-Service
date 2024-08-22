@@ -1,0 +1,11 @@
+<div class="product-list">
+  <h1>Liste des produits</h1>
+  <ul>
+    <li *ngFor="let product of products">
+      <div class="product-item">
+        <span>{{ product.name }} - ${{ product.price.toFixed(2) }}</span>
+        <button (click)="buyProduct(product.id, product.price)">Acheter</button>
+      </div>
+    </li>
+  </ul>
+</div>

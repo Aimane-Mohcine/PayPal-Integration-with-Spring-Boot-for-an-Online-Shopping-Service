@@ -1,0 +1,33 @@
+.message-container {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  max-width: 400px;
+  background-color: #f9f9f9;
+}
+
+.message-container h1 {
+  color: #dc3545; /* Rouge pour l'erreur */
+  font-size: 24px;
+}
+
+.message-container p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.message-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-container button:hover {
+  background-color: #0056b3;
+}
