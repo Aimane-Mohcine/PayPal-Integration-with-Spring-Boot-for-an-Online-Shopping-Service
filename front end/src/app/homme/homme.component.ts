@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-homme',
@@ -9,12 +10,12 @@ import { HttpClient } from "@angular/common/http";
 export class HommeComponent implements OnInit {
 
   products = [
-    {id: 1, name: 'Product 1', price: 0.01},
+    {id: 1, name: 'Product 1', price: 10.00},
     {id: 2, name: 'Product 2', price: 20.00},
     {id: 3, name: 'Product 3', price: 30.00},
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -22,16 +23,11 @@ export class HommeComponent implements OnInit {
 
 
   buyProduct(productId: number, price: number): void {
-    const currency = "USD";
-    const description = "Achat de produit";
     const idOrder = productId.toString();  // Convertir l'ID du produit en chaîne de caractères
 
-    console.log("idOrder being sent: " + idOrder);  // Ajouter un log pour vérifier la valeur envoyée
 
     this.http.post<any>('http://localhost:8081/api/pay/create', {
       amount: price,
-      currency: currency,
-      description: description,
       idOrder: idOrder  // Inclure idOrder dans la requête
     }).subscribe(
       (data) => {

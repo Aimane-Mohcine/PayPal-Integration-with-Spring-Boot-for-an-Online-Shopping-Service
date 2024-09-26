@@ -1,0 +1,21 @@
+/* src/app/components/payout-status/payout-status.component.css */
+.payout-status-container {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  color: green;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-container button:hover {
+  background-color: #0056b3;
+}

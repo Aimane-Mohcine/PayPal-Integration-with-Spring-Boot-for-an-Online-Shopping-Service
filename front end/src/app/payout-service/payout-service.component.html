@@ -1,0 +1,20 @@
+<!-- src/app/components/payout-form/payout-form.component.html -->
+<div class="payout-form-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="sellerId">Seller ID:</label>
+      <select id="sellerId" [(ngModel)]="sellers" name="sellerId" required>
+        <option *ngFor="let seller of sellers" [value]="seller.id">{{ seller.name }} (ID: {{ seller.id }})</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="recipientEmail">Recipient Email:</label>
+      <input type="email" id="recipientEmail" [(ngModel)]="recipientEmail" name="recipientEmail" required>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" [(ngModel)]="amount" name="amount" required>
+    </div>
+    <button type="submit" class="btn">Send Payout</button>
+  </form>
+</div>
